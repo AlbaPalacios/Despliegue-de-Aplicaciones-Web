@@ -1,0 +1,10 @@
+Script2
+#!/bin/bash
+grep -q -w "$1" /etc/hosts
+if [ $? -eq 0 ]
+then
+  echo "Este dominio ya existe"
+else
+  echo "$2 $1" >> /etc/hosts
+echo "Se añadió el dominio"
+fi
